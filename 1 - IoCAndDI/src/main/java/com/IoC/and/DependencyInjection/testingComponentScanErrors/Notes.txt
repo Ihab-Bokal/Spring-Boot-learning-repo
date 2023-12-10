@@ -1,0 +1,18 @@
+- This package was created to see the error that Spring Boot throws when it can't find the specified components
+in the main packages -> It can't parse the package to find the beans -> it can't add them to Spring container
+To manage them. Hence, resulting in the error
+
+- Unless explicitly indicated in the IoCAndDiApplication class - i.e. the main class - The app won't scan this
+package
+
+- The error that the compiler throws after moving ICoach and CricketCoach to this âckage is:
+Consider defining a bean of type 'com.IoC.and.DependencyInjection.IoCAndDI.common.ICoach'
+in your configuration
+
+- The remedy to this problem is by adding the following parameter to @SpringBootApplication:
+@SpringBootApplication(
+		// This parameter tells Spring Boot the packages where it should look for components
+		scanBasePackages = {
+				"com.IoC.and.DependencyInjection.testingComponentScanErrors",
+				"com.IoC.and.DependencyInjection.IoCAndDI"
+		})

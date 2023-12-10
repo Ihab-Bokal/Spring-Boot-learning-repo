@@ -3,6 +3,14 @@ package com.IoC.and.DependencyInjection.IoCAndDI;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/*
+@SpringBootApplication(
+		// This parameter tells Spring Boot the packages where it should look for components
+		scanBasePackages = {
+				"com.IoC.and.DependencyInjection.testingComponentScanErrors",
+				"com.IoC.and.DependencyInjection.IoCAndDI"
+		})
+*/
 @SpringBootApplication
 public class IoCAndDiApplication {
 

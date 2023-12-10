@@ -1,4 +1,4 @@
-package com.IoC.and.DependencyInjection.IoCAndDI.rest;
+package com.IoC.and.DependencyInjection.IoCAndDI.common;
 
 import org.springframework.stereotype.Component;
 
