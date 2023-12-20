@@ -2,6 +2,7 @@ package com.IoC.and.DependencyInjection.IoCAndDI.rest;
 
 
 import com.IoC.and.DependencyInjection.IoCAndDI.common.ICoach;
+import com.IoC.and.DependencyInjection.IoCAndDI.config.CoachesConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +17,7 @@ public class DemoController {
     // And injects them in the constructor
 
     @Autowired
-    public DemoController(@Qualifier("basketBallCoach") ICoach coach) {
+    public DemoController(@Qualifier("cricketCoach") ICoach coach) {
         /* 1. As log as I haven't created CricketCoach and declared it as a Component, the params for the
          constructor raise an error saying that no Bean implements the interface ICoach */
         this.myCoach = coach;
@@ -25,8 +26,10 @@ public class DemoController {
 
     // Use the @Qualifier("className") so that Spring can know which Component to inject
     @Autowired
-    public void setMyCoach(@Qualifier("basketBallCoach") ICoach myCoach) {
-        this.myCoach = myCoach;
+    public void setMyCoach(@Qualifier("I can set a Bean Id that way :)") ICoach myCoach) {
+        // Check out CoachesConfig to know why "I can set a Bean Id that way :)" is the bean's ID
+        System.out.println("In constructor: " + getClass().getSimpleName());
+        this.myCoach = CoachesConfig.swimCoach();
     }
 
 
