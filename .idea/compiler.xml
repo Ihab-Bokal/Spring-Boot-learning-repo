@@ -8,11 +8,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="IoCAndDI" />
         <module name="first_project" />
+        <module name="Hibernate_JPA" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Hibernate_JPA" options="-parameters" />
       <module name="IoCAndDI" options="-parameters" />
       <module name="first_project" options="-parameters" />
     </option>

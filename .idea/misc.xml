@@ -6,6 +6,7 @@
       <list>
         <option value="$PROJECT_DIR$/1 - IoCAndDI/pom.xml" />
         <option value="$PROJECT_DIR$/0 - first_project/pom.xml" />
+        <option value="$PROJECT_DIR$/2 - Hibernate_JPA/pom.xml" />
       </list>
     </option>
   </component>
