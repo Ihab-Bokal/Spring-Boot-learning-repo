@@ -22,4 +22,12 @@ public class StudentDao implements IStudentDao {
     public void save(Student myStudent) {
         entityManager.persist(myStudent);
     }
+
+    @Override
+    public Student findById(int studentId) {
+        // indicate the class that will encapsulate the retrieved data
+        return entityManager.find(Student.class, studentId);
+    }
+    // We did not use @Transactional here because we're only retrieving from the db. we're not performing any
+    // updates that could result inn errors
 }
